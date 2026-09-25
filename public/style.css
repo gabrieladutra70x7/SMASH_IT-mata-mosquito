@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a0f2e url('img/smashit.jpg') no-repeat center center / cover;
+    font-family: 'Lilita One', cursive, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+/* ==================== HEADER ==================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo-text {
+    font-size: 2rem;
+    color: #fbc531;
+    text-shadow: 3px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.link1 {
+    padding: 10px 22px;
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    border: 3px solid #000;
+    border-radius: 50px;
+    box-shadow: 0 4px 0 #000;
+    transition: transform 0.1s, background-color 0.2s;
+    display: inline-block;
+}
+
+.link1:hover {
+    background-color: #ff6b6b;
+}
+
+.link1:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #000;
+}
+
+.btn-ranking {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+/* ==================== CONTAINER CENTRAL ==================== */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.card-game {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    border: 4px solid #f1c40f;
+    border-radius: 28px;
+    padding: 35px 25px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.card-ranking {
+    max-width: 580px; /* Mais largo para acomodar a tabela */
+}
+
+.game-title {
+    font-size: 3.2rem;
+    color: #ff3838;
+    text-shadow: 4px 4px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.game-subtitle {
+    font-size: 1rem;
+    color: #f8b739;
+    text-shadow: 2px 2px 0 #000;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* ==================== FORMULÁRIO (INDEX) ==================== */
+.input-group {
+    margin-bottom: 20px;
+}
+
+#nickname, #level {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    text-align: center;
+    color: white;
+    background-color: rgba(20, 20, 20, 0.85);
+    border: 3px solid #485460;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.6);
+    transition: border-color 0.3s;
+}
+
+#nickname::placeholder { color: #a4b0be; }
+#nickname:focus, #level:focus { border-color: #f1c40f; }
+#level option { background-color: #2c3e50; color: white; }
+
+#jogar-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: white;
+    background: linear-gradient(180deg, #44bd32 0%, #27ae60 100%);
+    border: 3px solid #000;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #1e8449, 0 12px 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 0 #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#jogar-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #1e8449;
+}
+
+/* ==================== TABELA DE RANKING ==================== */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 25px;
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Espaçamento entre as linhas estilo card */
+}
+
+.ranking-table th {
+    background-color: #2c3e50;
+    color: #f1c40f;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.ranking-table th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-left: 2px solid #000;
+}
+
+.ranking-table th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-right: 2px solid #000;
+}
+
+.ranking-table td {
+    background-color: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    padding: 12px 10px;
+    font-size: 1rem;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.ranking-table tr td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-left: 2px solid #000;
+}
+
+.ranking-table tr td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-right: 2px solid #000;
+}
+
+/* PÓDIO / TOP 3 SUPERCELL */
+.ranking-table tr.rank-1 td { background-color: #f1c40f; color: #000; text-shadow: none; }
+.ranking-table tr.rank-2 td { background-color: #dcdde1; color: #000; text-shadow: none; }
+.ranking-table tr.rank-3 td { background-color: #e67e22; color: #fff; }
+
+.badge {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+.loading {
+    color: #f1c40f;
+    padding: 20px 0 !important;
+}
+
+/* ==================== BOTÕES DE AÇÃO (RANKING) ==================== */
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-action {
+    flex: 1;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid #000;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #000;
+    transition: transform 0.1s;
+    display: inline-block;
+}
+
+.btn-green {
+    background: linear-gradient(180deg, #44bd32 0%, #27ae60 100%);
+    color: white;
+    box-shadow: 0 6px 0 #1e8449;
+}
+
+.btn-yellow {
+    background: linear-gradient(180deg, #fbc531 0%, #e1b12c 100%);
+    color: #000;
+    text-shadow: none;
+    box-shadow: 0 6px 0 #b38808;
+}
+
+.btn-action:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #000;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #dcdde1;
+    text-shadow: 1px 1px 0 #000;
+}
+
+/* ==================== ESTILOS ESPECÍFICOS DO JOGO ==================== */
+.game-body {
+    overflow: hidden; /* Impede rolagem durante a partida */
+    user-select: none;
+}
+
+.game-header {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 12px 25px;
+    border-bottom: 3px solid #f1c40f;
+    z-index: 100;
+}
+
+.hud-item {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    text-shadow: 2px 2px 0 #000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.heart {
+    font-size: 1.8rem;
+    filter: drop-shadow(2px 2px 0 #000);
+}
+
+.heart.lost {
+    filter: grayscale(100%) opacity(0.3);
+}
+
+/* ARENA DE JOGO */
+#game-arena {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    cursor: crosshair;
+}
+
+/* PETECA */
+.peteca {
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 8px 6px rgba(0,0,0,0.5));
+    transition: transform 0.1s ease;
+}
+
+.peteca:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.peteca-p { width: 50px; height: 50px; }
+.peteca-m { width: 75px; height: 75px; }
+.peteca-g { width: 100px; height: 100px; }
+
+/* CURSOR DE MÃO DO MEDIAPIPE */
+.hand-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #00d2d3;
+    background: rgba(0, 210, 211, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
+    transition: background-color 0.1s, border-color 0.1s;
+}
+
+.hand-cursor.closed {
+    background: rgba(255, 56, 56, 0.7);
+    border-color: #ff3838;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* WEBCAM PREVIEW */
+.webcam-box {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 130px;
+    height: 95px;
+    border: 3px solid #f1c40f;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    z-index: 200;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.webcam-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* Espelhar webcam */
+}
+
+.cam-label {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    font-size: 0.6rem;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    color: #fff;
+}
+
+/* MODAL GAME OVER */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}

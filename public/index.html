@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash It - Início</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fontes no estilo Supercell (Lilita One / Rampart One) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rampart+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="logo-text">SMASH IT!</span>
+        </div>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a class="link1" href="index.html">Início</a></li>
+                <li><a class="link1 btn-ranking" href="ranking.html">Ranking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="card-game">
+            <form id="game-form" onsubmit="iniciarJogo(event)">
+                <!-- Nickname -->
+                <div class="input-group">
+                    <input type="text" id="nickname" placeholder="DIGITE SEU NICKNAME" maxlength="15" required autocomplete="off">
+                </div>
+
+                <!-- Dificuldade -->
+                <div class="input-group">
+                    <select name="level" id="level" required>
+                        <option value="" disabled selected>SELECIONE O NÍVEL</option>
+                        <option value="atletinhas">ATLETINHAS (FÁCIL)</option>
+                        <option value="PanAm">PAN-AM (MÉDIO)</option>
+                        <option value="lindan">LIN DAN (IMPOSSÍVEL)</option>
+                    </select>
+                </div>
+
+                <!-- Botão Jogar estilo Supercell -->
+                <button type="submit" id="jogar-btn" link="jogo.html">JOGAR</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados &copy; 2026 - Smash It Game</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash It - Partida</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonte Supercell Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <!-- MediaPipe Hands CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body class="game-body">
+
+    <!-- NAVBAR DA PARTIDA -->
+    <header class="game-header">
+        <a href="index.html" class="link1 btn-home">‹ SAIR</a>
+        
+        <div class="hud-item hearts-container" id="hearts-container">
+            <span class="heart">❤️</span>
+            <span class="heart">❤️</span>
+            <span class="heart">❤️</span>
+        </div>
+
+        <div class="hud-item score-container">
+            <span class="hud-label">PONTOS:</span>
+            <span id="score-text">0</span>
+        </div>
+    </header>
+
+    <!-- ÁREA DO JOGO -->
+    <main id="game-arena" onclick="registrarErroClique(event)">
+        <!-- Cursor virtual para indicar a posição da mão rastreada -->
+        <div id="hand-cursor" class="hand-cursor"></div>
+    </main>
+
+    <!-- FEED DA CÂMERA (MINIMIZADO NO CANTO) -->
+    <div class="webcam-box">
+        <video id="webcam" autoplay playsinline muted></video>
+        <span class="cam-label">Rastreamento de Mão</span>
+    </div>
+
+    <!-- MODAL DE GAME OVER -->
+    <div id="game-over-modal" class="modal">
+        <div class="card-game modal-content">
+            <h1 class="game-title">FIM DE JOGO!</h1>
+            <p class="game-subtitle" id="final-score-text">Sua pontuação: 0</p>
+            <div class="actions">
+                <button class="btn-action btn-green" onclick="window.location.reload()">REJOGAR</button>
+                <a href="ranking.html" class="btn-action btn-yellow">RANKING</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="jogo.js"></script>
+</body>
+</html>
